@@ -15,7 +15,13 @@ app.use(bodyParser.json());
 // Access static directory
 app.use(express.static("/public"));
 
+// Set Handlebars
+var exphbs = require("express-handlebars");
+app.engine("handlebars", exphbs({defaultLayout: "main"}));
+app.set("view engine", "handlebars");
+
 //Routes
+require('./controllers/burgers_controller.js')(app);
 
 // Start the server
 app.listen(PORT, function() {

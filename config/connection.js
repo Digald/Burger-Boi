@@ -2,7 +2,7 @@
 var Sequelize = require("sequelize");
 
 // Creates mySQL connection using Sequelize
-var sequelize = new Sequelize("burger-boi", "root", "root", {
+var sequelize = new Sequelize("burger_boi", "root", "root", {
     host: "localhost",
     dialect: "mysql",
     pool: {
@@ -12,3 +12,4 @@ var sequelize = new Sequelize("burger-boi", "root", "root", {
     }
   });
   
+module.exports = sequelize;
