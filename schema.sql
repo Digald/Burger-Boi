@@ -1,0 +1,2 @@
+DROP DATABASE IF EXISTS 'burger-boi';
+CREATE DATABASE 'burger-boi';
