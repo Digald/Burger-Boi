@@ -1,0 +1,20 @@
+{
+  "name": "burger-boi",
+  "version": "1.0.0",
+  "description": "A full stack application demonstration of CRUD functions with an ORM",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Digald/Burger-Boi.git"
+  },
+  "author": "Mark Alaniz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Digald/Burger-Boi/issues"
+  },
+  "homepage": "https://github.com/Digald/Burger-Boi#readme"
+}
