@@ -11,6 +11,7 @@ $(document).ready(function() {
     console.log(order);
     // Reset input
     $("#burgerInput").val("");
+
     // Ajax POST request
     var currentURL = window.location.origin;
     $.ajax({
@@ -22,5 +23,13 @@ $(document).ready(function() {
       // Gets back what we are going to create in the database in json format?
       console.log(data);
     });
-  });
+
+    // Ajax GET request to populate the burgers
+    // $.ajax({
+    //   method: "GET",
+    //   url: currentURL + "/api/all"
+    // }).done(function(data){
+
+    // });
+  }); //end submit on click
 });

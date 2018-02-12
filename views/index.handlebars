@@ -8,7 +8,13 @@
     <div class="row">
         <div class="col">
             <h2>Burgers Ready to Eat</h2>
-            <div id="toEat">None so far...</div>
+            {{#if burger}} 
+                {{#each burger}}
+                    <p>{{this.id}},{{this.burger_name}},{{this.devoured}}</p>
+                {{/each}} 
+            {{else}}
+                <p>None so far...</p>
+            {{/if}}
         </div>
         <div class="col">
             <h2>Burgers Already Eaten</h2>
