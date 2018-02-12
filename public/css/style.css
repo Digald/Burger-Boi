@@ -1,7 +1,12 @@
-body {
-    background-color: cyan;
+.row {
+    padding-bottom: 50px;
 }
 
 .col {
     text-align: center;
+}
+
+#burgerInput {
+    height: 100px;
+    width: 500px;
 }

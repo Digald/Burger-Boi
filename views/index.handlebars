@@ -1,6 +1,6 @@
 <div class="container-fluid">
     <div class="row">
-        <div class="col" align="center">
+        <div class="col">
             <h1>Burger Boi</h1>
             <img src="/images/burger_banner.jpg" alt="burger banner">
         </div>
@@ -8,19 +8,18 @@
     <div class="row">
         <div class="col">
             <h2>Burgers Ready to Eat</h2>
-            <div id="toEat"></div>
+            <div id="toEat">None so far...</div>
         </div>
         <div class="col">
             <h2>Burgers Already Eaten</h2>
-            <div id="eaten"></div>
+            <div id="eaten">None so far...</div>
         </div>
     </div>
     <div class="row">
         <div class="col">
             <h2>Place your order here, even if it's not food!</h2>
-            <form action="">
-                <textarea name="orderBurger" id="burger"></textarea>
-            </form>
+            <textarea name="orderBurger" id="burgerInput" placeholder="Order Here"></textarea>
+            <button type="submit" id="submitBurger" class="btn btn-success">Place Order!</button>
         </div>
     </div>
 </div>
