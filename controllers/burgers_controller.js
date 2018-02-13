@@ -8,9 +8,12 @@ module.exports = function(app) {
   //index route to get all burgers
   app.get("/", function(req, res) {
     Burger.findAll({}).then(function(results) {
-      console.log(results[0].dataValues);
-      var currentBurgerList = results[0].dataValues;
-      res.render("index", {burger: currentBurgerList});
+      console.log(results);
+      var currentBurgerList = {};
+      // for (i in results) {
+      //   currentBurgerList += results[i].dataValues;
+      // }
+      res.render("index", { burger: currentBurgerList });
     });
   });
 
