@@ -8,21 +8,15 @@ module.exports = function(app) {
   //index route to get all burgers
   app.get("/", function(req, res) {
     Burger.findAll({}).then(function(results) {
-      console.log(results);
-      var currentBurgerList = {};
-      // for (i in results) {
-      //   currentBurgerList += results[i].dataValues;
-      // }
-      res.render("index", { burger: currentBurgerList });
+      var allBurgers = [];
+      for (i in results){
+        allBurgers.push(results[i].dataValues)
+      }
+      console.log(allBurgers);
+      res.render("index", { burger: allBurgers});
     });
   });
 
-  // GET all burgers from DB
-  //   app.get("/api/all", function(req, res) {
-  //     Burger.findAll({}).then(function(results) {
-  //       res.json(results);
-  //     });
-  //   });
   // POST new burger to DB
   app.post("/api/new", function(req, res) {
     console.log(req.body);

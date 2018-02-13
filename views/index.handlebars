@@ -2,19 +2,17 @@
     <div class="row">
         <div class="col">
             <h1>Burger Boi</h1>
-            <img src="/images/burger_banner.jpg" alt="burger banner">
+            {{!-- <img src="/images/burger_banner.jpg" alt="burger banner"> --}}
         </div>
     </div>
     <div class="row">
         <div class="col">
             <h2>Burgers Ready to Eat</h2>
+            {{#if burger.devoured}}
             {{#each burger}}
-                {{#if burger}} 
-                    <p>{{id}},{{burger_name}},{{devoured}}</p>
-            {{else}}
-                <p>None so far...</p>
+                 <p>{{this.id}}, {{this.burger_name}}, {{this.devoured}}</p>
+            {{/each}} 
             {{/if}}
-         {{/each}} 
         </div>
         <div class="col">
             <h2>Burgers Already Eaten</h2>
