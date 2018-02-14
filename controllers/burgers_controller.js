@@ -9,11 +9,11 @@ module.exports = function(app) {
   app.get("/", function(req, res) {
     Burger.findAll({}).then(function(results) {
       var allBurgers = [];
-      for (i in results){
-        allBurgers.push(results[i].dataValues)
+      for (i in results) {
+        allBurgers.push(results[i].dataValues);
       }
       console.log(allBurgers);
-      res.render("index", { burger: allBurgers});
+      res.render("index", { burger: allBurgers });
     });
   });
 
@@ -26,6 +26,31 @@ module.exports = function(app) {
       devoured: req.body.devoured
     }).then(function(results) {
       res.json(results);
+    });
+  });
+
+  app.put("/api/:id", function(req, res) {
+    Burger.update(
+      {
+        devoured: true
+      },
+      {
+        where: {
+          id: req.params.id
+        }
+      }
+    ).then(function(results) {
+      res.json(results);
+    });
+  });
+
+  app.delete("/api/:id", function(req, res) {
+    Burger.destroy({
+      where: {
+        id: req.params.id
+      }
+    }).then(function(result) {
+      res.json(result);
     });
   });
 };

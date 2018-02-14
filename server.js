@@ -1,7 +1,6 @@
 // Dependencies
 var express = require("express");
 var bodyParser = require("body-parser");
-var Handlebars = require('handlebars');
 
 // Set up express app
 var app = express();
@@ -20,16 +19,6 @@ app.use(express.static(__dirname + "/public"));
 var exphbs = require("express-handlebars");
 app.engine("handlebars", exphbs({defaultLayout: "main"}));
 app.set("view engine", "handlebars");
-
-Handlebars.registerHelper('equal', function(lvalue, rvalue, options) {
-  if (arguments.length < 3)
-      throw new Error("Handlebars Helper equal needs 2 parameters");
-  if( lvalue!=rvalue ) {
-      return options.inverse(this);
-  } else {
-      return options.fn(this);
-  }
-});
 
 //Routes
 require('./controllers/burgers_controller.js')(app);

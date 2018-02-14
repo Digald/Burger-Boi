@@ -12,7 +12,7 @@
                 {{#each burger}} {{#if devoured}}
                 {{else}}
                 <li class="list-group-item">{{id}}. {{burger_name}}
-                    <button data-burgerId="{{id}}" class="btn devour">Eat This</button>
+                    <button data-burgerid="{{id}}" class="btn devour">Eat This</button>
                 </li>
                 {{/if}} {{/each}}
             </ul>
@@ -22,7 +22,7 @@
             <ul class="list-group">
                 {{#each burger}} {{#if devoured}}
                 <li class="list-group-item disabled">{{id}}. {{burger_name}}
-                    <button class="btn">Remove Scraps</button>
+                    <button data-burgerid="{{id}}" class="btn delete">Remove Scraps</button>
                 </li>
                 {{/if}} {{/each}}
             </ul>
