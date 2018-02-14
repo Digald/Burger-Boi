@@ -1,6 +1,5 @@
 $(document).ready(function() {
-  $("#submitBurger").on("click", function(event) {
-    event.preventDefault();
+  $("#submitBurger").on("click", function() {
     // Creating order object with devoured defaulted to false
     var order = {
       burger: $("#burgerInput")
@@ -23,13 +22,10 @@ $(document).ready(function() {
       // Gets back what we are going to create in the database in json format?
       console.log(data);
     });
-
-    // Ajax GET request to populate the burgers
-    // $.ajax({
-    //   method: "GET",
-    //   url: currentURL + "/api/all"
-    // }).done(function(data){
-
-    // });
   }); //end submit on click
+
+  $(".devour").on('click', function(event){
+    var id = $(this).data("burgerId");
+    console.log(id);
+  })
 });

@@ -2,21 +2,30 @@
     <div class="row">
         <div class="col">
             <h1>Burger Boi</h1>
-            {{!-- <img src="/images/burger_banner.jpg" alt="burger banner"> --}}
+            <img src="/images/burger_banner.jpg" alt="burger banner">
         </div>
     </div>
     <div class="row">
         <div class="col">
             <h2>Burgers Ready to Eat</h2>
-            {{#if burger.devoured}}
-            {{#each burger}}
-                 <p>{{this.id}}, {{this.burger_name}}, {{this.devoured}}</p>
-            {{/each}} 
-            {{/if}}
+            <ul class="list-group">
+                {{#each burger}} {{#if devoured}}
+                {{else}}
+                <li class="list-group-item">{{id}}. {{burger_name}}
+                    <button data-burgerId="{{id}}" class="btn devour">Eat This</button>
+                </li>
+                {{/if}} {{/each}}
+            </ul>
         </div>
         <div class="col">
             <h2>Burgers Already Eaten</h2>
-            <div id="eaten">None so far...</div>
+            <ul class="list-group">
+                {{#each burger}} {{#if devoured}}
+                <li class="list-group-item disabled">{{id}}. {{burger_name}}
+                    <button class="btn">Remove Scraps</button>
+                </li>
+                {{/if}} {{/each}}
+            </ul>
         </div>
     </div>
     <div class="row">
