@@ -1,8 +1,12 @@
 // Dependencies
 var Sequelize = require("sequelize");
 
-// Creates mySQL connection using Sequelize
-var sequelize = new Sequelize("burger_boi", "root", "root", {
+// Creates mySQL connection using Sequelize OR heroku
+var sequelize;
+if (process.env.JAWSDB_URL) {
+  sequelize = new Sequelize(process.env.JAWSDB_URL);
+} else {
+  sequelize = new Sequelize("burger_boi", "root", "root", {
     host: "localhost",
     dialect: "mysql",
     pool: {
@@ -11,5 +15,6 @@ var sequelize = new Sequelize("burger_boi", "root", "root", {
       idle: 10000
     }
   });
-  
+}
+
 module.exports = sequelize;
